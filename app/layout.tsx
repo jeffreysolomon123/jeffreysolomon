@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import GlassHeader from "./components/GlassHeader";
+import SocialFloat from "./components/SocialFloat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,12 @@ export default function RootLayout({
       >
         <GlassHeader brand="Jeffrey Solomon" />
         {children}
+        <SocialFloat
+          linkedin="https://linkedin.com/in/jeffreysolomon123"
+          github="https://github.com/jeffreysolomon123"
+          instagram="https://instagram.com/jefffffrey"
+          youtube="https://www.youtube.com/@jeffreysolomon1107"
+        />
       </body>
     </html>
   );

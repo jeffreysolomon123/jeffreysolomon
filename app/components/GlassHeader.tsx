@@ -19,7 +19,6 @@ const defaultLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function GlassHeader({
@@ -36,9 +35,13 @@ export default function GlassHeader({
           {/* Brand */}
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold tracking-tight text-white sm:text-base pl-5">
-              <h1 className="text-xl">
-                <span className="geist-medium text-white">Jeffrey Solomon</span>
-              </h1>
+              <Link href={"/"}>
+                <h1 className="text-xl">
+                  <span className="geist-medium text-white">
+                    Jeffrey <span className="geist-extralight">Solomon</span>
+                  </span>
+                </h1>
+              </Link>
             </span>
           </div>
 
@@ -54,10 +57,10 @@ export default function GlassHeader({
               </Link>
             ))}
             <Link
-              href="#contact"
-              className="geist-regular rounded-full border border-white/40 bg-white/10 px-4 py-1.5 text-xs font-semibold text-white shadow-sm backdrop-blur-md transition hover:bg-white/20"
+              href="/contact"
+              className="geist-regular rounded-full border border-white/40 bg-[#4A0039]/60 px-4 py-1.5 text-xs font-semibold text-white shadow-sm backdrop-blur-md transition hover:bg-[#4A0039]/40"
             >
-              Let&apos;s talk
+              Get in Touch
             </Link>
           </nav>
 
@@ -120,7 +123,7 @@ export default function GlassHeader({
               className="mt-2 rounded-2xl border border-white/40 bg-white/10 px-3 py-2 text-xs font-semibold text-white text-center"
               onClick={() => setOpen(false)}
             >
-              Let&apos;s talk
+              Get in Touch
             </Link>
           </div>
         </nav>

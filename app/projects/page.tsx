@@ -1,5 +1,6 @@
-// app/projects/page.tsx
+"use client";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 
 type Project = {
   title: string;
@@ -22,7 +23,7 @@ const projects: Project[] = [
     role: "",
     status: "Live",
     link: "https://qumment.vercel.app",
-    repo: "https://github.com/your-username/qumment",
+    repo: "https://github.com/jeffreysolomon123/Qumment",
   },
   {
     title: "SocketTalk – Real-time Chat App",
@@ -91,11 +92,54 @@ const projects: Project[] = [
     role: "ML engineer",
     repo: "https://github.com/jeffreysolomon123/elliptic-illicit-detection",
   },
+  {
+    title: "RAG – Retrieval-Augmented Generation Python App",
+    tagline: "",
+    description:
+      "A simple but fully functional Retrieval-Augmented Generation (RAG) system that answers questions based on custom markdown files. Uses LangChain for document loading and splitting, Chroma for vector embedding storage, HuggingFaceEmbeddings for embedding generation, and OpenRouter LLMs for final responses. Includes secure .env key management and a reproducible test using the Alice in Wonderland dataset.",
+    tech: [
+      "Python",
+      "LangChain",
+      "ChromaDB",
+      "HuggingFace Embeddings",
+      "OpenRouter API",
+      "Markdown Processing",
+    ],
+    role: "",
+    repo: "https://github.com/jeffreysolomon123/RAG",
+  },
 ];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+      duration: 0.4,
+      ease: [0.16, 0.84, 0.44, 1], // smooth ease-out curve
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.45,
+      ease: [0.16, 0.84, 0.44, 1], // same curve, feels polished
+    },
+  },
+};
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#03030A] text-white projectsbg">
+    <main className="min-h-screen  text-white bg-[#03030A]">
       {/* Background gradient / glow */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/30 via-black to-black" />
@@ -108,11 +152,10 @@ export default function ProjectsPage() {
         <header className="flex flex-col gap-4 border-b border-white/10 pb-8">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h1 className="mt-2 text-3xl font-semibold sm:text-4xl lg:text-5xl geist-light">
+              <h1 className=" text-2xl font-semibold leading-tight text-white sm:text-5xl lg:text-4xl geist-light">
                 Some of my selected work across{" "}
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                  <br />
-                  web, mobile & AI.
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent dm-serif-display-regular text-3xl lg:text-5xl">
+                  <br /> AI, web & mobile.
                 </span>
               </h1>
             </div>
@@ -126,11 +169,17 @@ export default function ProjectsPage() {
           </p>
         </header>
 
-        {/* Project grid */}
-        <section className="grid gap-6 md:grid-cols-2">
+        {/* Project grid with animation */}
+        <motion.section
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid gap-6 md:grid-cols-2"
+        >
           {projects.map((project) => (
-            <article
+            <motion.article
               key={project.title}
+              variants={cardVariants}
               className="group flex flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-5 shadow-[0_0_50px_rgba(0,0,0,0.4)] backdrop-blur-xl transition hover:border-purple-300/50 hover:bg-white/10"
             >
               <div className="space-y-4">
@@ -205,9 +254,9 @@ export default function ProjectsPage() {
                   )}
                 </div>
               )}
-            </article>
+            </motion.article>
           ))}
-        </section>
+        </motion.section>
 
         {/* Footer note */}
         <section className="mt-4 border-t border-white/10 pt-6 text-xs text-white/50 geist-regular">

@@ -14,12 +14,6 @@ export default function Home() {
 
       {/* Hero */}
       <HeroSection />
-      <SocialFloat
-        linkedin="https://linkedin.com/in/jeffreysolomon123"
-        github="https://github.com/jeffreysolomon123"
-        instagram="https://instagram.com/jefffffrey"
-        youtube="https://www.youtube.com/@jeffreysolomon1107"
-      />
     </main>
   );
 }
