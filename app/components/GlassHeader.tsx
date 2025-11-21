@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 type NavLink = {
   label: string;
@@ -15,10 +16,10 @@ interface GlassHeaderProps {
 }
 
 const defaultLinks: NavLink[] = [
-  { label: "Home", href: "#" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function GlassHeader({
@@ -89,29 +90,40 @@ export default function GlassHeader({
         </div>
 
         {/* Mobile dropdown */}
-        {open && (
-          <nav className="mt-2 overflow-hidden rounded-3xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white/90 shadow-lg backdrop-blur-xl backdrop-saturate-150 md:hidden">
-            <div className="flex flex-col gap-2">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-2xl px-2 py-1.5 transition hover:bg-white/15"
-                  onClick={() => setOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+        <nav
+          className={`
+    mt-2 overflow-hidden rounded-3xl border border-white/20
+    bg-white/10 px-4 py-1.5 text-sm text-white/90 shadow-lg
+    backdrop-blur-xl backdrop-saturate-150 md:hidden geist-regular
+    transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
+    origin-top
+    ${
+      open
+        ? "max-h-64 opacity-100 scale-100 translate-y-0"
+        : "max-h-0 opacity-0 scale-95 -translate-y-2 pointer-events-none"
+    }
+  `}
+        >
+          <div className="flex flex-col gap-2 py-1">
+            {links.map((link) => (
               <Link
-                href="#contact"
-                className="mt-2 rounded-2xl border border-white/40 bg-white/10 px-3 py-2 text-xs font-semibold text-white text-center"
+                key={link.href}
+                href={link.href}
+                className="rounded-2xl px-2 py-1.5 transition hover:bg-white/15"
                 onClick={() => setOpen(false)}
               >
-                Let&apos;s talk
+                {link.label}
               </Link>
-            </div>
-          </nav>
-        )}
+            ))}
+            <Link
+              href="#contact"
+              className="mt-2 rounded-2xl border border-white/40 bg-white/10 px-3 py-2 text-xs font-semibold text-white text-center"
+              onClick={() => setOpen(false)}
+            >
+              Let&apos;s talk
+            </Link>
+          </div>
+        </nav>
       </div>
     </header>
   );

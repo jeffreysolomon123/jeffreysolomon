@@ -8,7 +8,12 @@
 
 .mybg{
 background: #020024;
-background: linear-gradient(168deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(97, 0, 74, 1) 100%);
+background: linear-gradient(168deg, rgb(2, 1, 20) 0%, rgb(3, 3, 27) 35%, rgb(92, 0, 70) 100%);
+}
+
+.projectsbg{
+  background: #020024;
+background: linear-gradient(168deg, rgb(2, 1, 20) 0%, rgb(3, 3, 27) 35%, rgb(43, 0, 33) 100%);
 }
 .dm-serif-display-regular {
   font-family: "DM Serif Display", serif;
