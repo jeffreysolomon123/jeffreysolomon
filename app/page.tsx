@@ -1,7 +1,6 @@
 import Image from "next/image";
 import CardNav from "./components/CardNav";
 import GlassHeader from "./components/GlassHeader";
-import DarkVeil from "./components/DarkVeil";
 import HeroSection from "./components/HeroSection";
 import SocialFloat from "./components/SocialFloat";
 
