@@ -58,8 +58,8 @@ export function Hero() {
               height={profile.photo.height}
               alt={profile.photo.alt}
               priority
-              sizes="(min-width: 1024px) 520px, 86vw"
-              className="relative z-10 h-auto w-[min(86%,520px)] select-none"
+              sizes="(min-width: 1024px) 760px, 86vw"
+              className="relative z-10 h-auto w-[min(86%,520px)] select-none lg:h-[min(86svh,820px)] lg:w-auto lg:max-w-full lg:object-contain lg:object-bottom"
             />
           ) : (
             // TODO(jeffrey): add public/me.png and set profile.photo.
