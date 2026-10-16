@@ -46,7 +46,7 @@ export const projects: Project[] = [
     year: "2026",
     category: "AI Agents / Full-stack",
     summary:
-      "A multi-agent web app that automates the first stage of an internship hunt. Enter a goal and upload your resume, and a crew of AI agents finds startups, researches them, scores your fit and drafts cold emails, streaming every step live. It only drafts and never sends.",
+      "A multi-agent app that automates the first stage of an internship hunt. Enter a goal and upload your resume, and a crew of AI agents finds startups, researches them, scores your fit and drafts cold emails, streaming every step live. It only drafts and never sends.",
     stack: ["Next.js", "TypeScript", "FastAPI", "LangGraph", "Supabase", "OpenRouter", "Tavily", "Docker"],
     // TODO(jeffrey): add the Waypoint live link once it's deployed.
     links: { github: "https://github.com/jeffreysolomon123/Waypoint" },
