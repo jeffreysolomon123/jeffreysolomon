@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Fixed palette tokens: bg-cream, bg-ink, text-accent, ... */
+@theme {
+  --color-cream: #fbf7ee;
+  --color-ink: #0b0b0b;
+  --color-bone: #f5f1e8; /* text on ink */
+  --color-accent: #e8390e;
+  /* #E8390E is 3.9:1 on cream, so small accent text on cream uses this (4.6:1). */
+  --color-accent-deep: #d4330b;
+}
+
+/* Band-aware tokens: text-fg, text-muted, border-line, text-label resolve per band. */
+@theme inline {
+  --color-fg: var(--band-fg);
+  --color-muted: var(--band-muted);
+  --color-line: var(--band-line);
+  --color-label: var(--band-label);
+
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+:root,
+.band-cream {
+  --band-bg: var(--color-cream);
+  --band-fg: var(--color-ink);
+  --band-muted: #6b665c;
+  --band-line: rgba(11, 11, 11, 0.15);
+  --band-label: var(--color-accent-deep);
+}
+
+.band-ink {
+  --band-bg: var(--color-ink);
+  --band-fg: var(--color-bone);
+  --band-muted: #9a958a;
+  --band-line: rgba(245, 241, 232, 0.18);
+  --band-label: var(--color-accent);
+}
+
+.band-cream,
+.band-ink {
+  background-color: var(--band-bg);
+  color: var(--band-fg);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* Scroll-reveal content is server-rendered hidden; show it immediately. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
