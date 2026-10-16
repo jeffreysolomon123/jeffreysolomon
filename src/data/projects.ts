@@ -31,6 +31,7 @@ export const projects: Project[] = [
     // TODO(jeffrey): add the Play Store link once the app is live.
     links: {},
     logo: { src: "/Emblem_of_Tamil_Nadu.png", width: 1588, height: 1724, alt: "Emblem of Tamil Nadu" },
+    status: "In development",
     flagship: true,
     detail: {
       approach:
