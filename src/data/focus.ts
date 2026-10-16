@@ -29,7 +29,7 @@ export const focusAreas: FocusArea[] = [
     description:
       "Production mobile apps with role-based flows, offline storage and background work, including a BLE smart ring app streaming vitals in real time.",
     stack: ["React Native", "Flutter", "Room DB", "BLE", "Supabase"],
-    projects: ["medxai-ring", "anbaram", "safarx"],
+    projects: ["anbaram", "safarx"],
   },
   {
     title: "Backend, data and DevOps",

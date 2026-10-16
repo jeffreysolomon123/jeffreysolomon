@@ -99,16 +99,6 @@ export const projects: Project[] = [
     award: "3rd place, Hackinfinity 2025",
   },
   {
-    slug: "medxai-ring",
-    title: "MedXAI smart ring app",
-    year: "2026",
-    category: "Health, mobile",
-    // TODO(jeffrey): confirm what you can publicly show about the MedXAI ring app.
-    summary: "BLE smart ring companion app tracking 10 vitals in real time, built during my internship at MedXAI.",
-    stack: ["BLE", "Room DB", "Supabase"],
-    links: {},
-  },
-  {
     slug: "rag-qa",
     title: "RAG Q&A app",
     // TODO(jeffrey): add year for the RAG Q&A app.
@@ -137,25 +127,6 @@ export const projects: Project[] = [
       github: "https://github.com/jeffreysolomon123/Socket-Talk-Client",
       live: "https://socket-talk-client.vercel.app",
     },
-  },
-  {
-    slug: "heavy-vehicle-rental",
-    title: "Heavy-vehicle rental app",
-    year: "2025–26",
-    category: "Mobile, Selsons internship",
-    summary: "React Native app for renting heavy vehicles, built at Selsons Software Solutions.",
-    stack: ["React Native"],
-    links: {},
-  },
-  {
-    slug: "internal-chat",
-    title: "Internal real-time chat",
-    year: "2025–26",
-    category: "Web, Selsons internship",
-    summary: "Real-time internal chat web app for the team at Selsons Software Solutions.",
-    // TODO(jeffrey): add the stack for the Selsons internal chat app.
-    stack: [],
-    links: {},
   },
 ];
 
