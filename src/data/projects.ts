@@ -7,7 +7,8 @@ export type Project = {
   summary: string;
   stack: string[];
   links: { github?: string; live?: string };
-  status?: "In progress";
+  /** Small tag next to the year, e.g. "In development". Delete the field to hide it. */
+  status?: "In progress" | "In development";
   /** Short recognition line, e.g. a hackathon result. */
   award?: string;
   /** Flagships render large at the top of the list. */
@@ -17,6 +18,19 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "waypoint",
+    title: "Waypoint",
+    year: "2026",
+    category: "AI Agents / Full-stack",
+    summary:
+      "A multi-agent web app that automates the first stage of an internship hunt. Enter a goal and upload your resume, and a crew of AI agents finds startups, researches them, scores your fit and drafts cold emails, streaming every step live. It only drafts and never sends.",
+    stack: ["Next.js", "TypeScript", "FastAPI", "LangGraph", "Supabase", "OpenRouter", "Tavily", "Docker"],
+    // TODO(jeffrey): add the Waypoint live link once it's deployed.
+    links: { github: "https://github.com/jeffreysolomon123/Waypoint" },
+    status: "In development",
+    flagship: true,
+  },
   {
     slug: "claimshield-nexus",
     title: "ClaimShield Nexus",
