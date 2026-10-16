@@ -26,7 +26,7 @@ export function Hero() {
           <p className="mt-8 max-w-[40ch] text-[17px] leading-[1.6] text-fg">{profile.intro}</p>
 
           <div className="mt-8 flex flex-wrap gap-2">
-            <Button href="#work" variant="accent">
+            <Button href="#work" variant="accent" className="text-white">
               See my work
             </Button>
             {profile.resume && (
