@@ -8,7 +8,7 @@ export type Project = {
   stack: string[];
   links: { github?: string; live?: string };
   /** Small tag next to the year, e.g. "In development". Delete the field to hide it. */
-  status?: "In progress" | "In development";
+  status?: "In development";
   /** Short recognition line, e.g. a hackathon result. */
   award?: string;
   /** Flagships render large at the top of the list. */
@@ -80,7 +80,6 @@ export const projects: Project[] = [
     stack: ["Python", "LangGraph", "Groq API"],
     // TODO(jeffrey): add the UpgradeGuard repo link.
     links: {},
-    status: "In progress",
     flagship: true,
     detail: {
       problem: "Dependency upgrades are risky, and changelogs alone don't tell you whether your code is affected.",

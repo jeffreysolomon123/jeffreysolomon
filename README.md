@@ -47,7 +47,7 @@ Add an object to the `projects` array in `src/data/projects.ts`:
   summary: "One line on what it does.",
   stack: ["Python", "LangGraph"], // [] hides the stack
   links: { github: "https://github.com/…", live: "https://…" }, // either is optional
-  status: "In progress",         // optional
+  status: "In development",      // optional small tag; delete to hide
   award: "Winner, Some Hackathon 2026", // optional
   flagship: true,                // optional: shows large at the top
   detail: { problem: "…", approach: "…", outcome: "…" }, // optional: adds a "Case study" panel (flagships only)
