@@ -11,6 +11,8 @@ export type Project = {
   status?: "In development";
   /** Short recognition line, e.g. a hackathon result. */
   award?: string;
+  /** Small image shown next to the title, e.g. a client emblem. */
+  logo?: { src: string; width: number; height: number; alt: string };
   /** Flagships render large at the top of the list. */
   flagship?: boolean;
   /** Expandable case-study panel. Omit fields you don't have. */
@@ -18,6 +20,25 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "anbaram",
+    title: "Anbaram",
+    year: "2026",
+    category: "Civic tech, mobile + web",
+    summary:
+      "A donation-drive tracking platform for the Chengalpattu District Administration, Tamil Nadu, covering the full trail from collection to distribution.",
+    stack: ["Flutter", "React", "Supabase", "PostgreSQL", "Cloudinary"],
+    // TODO(jeffrey): add the Play Store link once the app is live.
+    links: {},
+    logo: { src: "/Emblem_of_Tamil_Nadu.png", width: 1588, height: 1724, alt: "Emblem of Tamil Nadu" },
+    flagship: true,
+    detail: {
+      approach:
+        "One role-based Flutter app for Collection Point and Distribution Center officers, plus a React dashboard for the Collector's office. I designed the Supabase schema for weight-based, category-wise logging (clothes, blankets, stationery, books), with role-based access, an admin-approval flow for officer onboarding and one-to-one nodal officer mapping per collection point. Cloudinary backs every entry with a photo, and the dashboard tracks collections, flags issues and generates reports.",
+      outcome:
+        "Presented to the District Collector of Chengalpattu. The Flutter app is being prepared for release on the Google Play Store.",
+    },
+  },
   {
     slug: "waypoint",
     title: "Waypoint",
@@ -49,24 +70,6 @@ export const projects: Project[] = [
       approach:
         "Led Team Cipher (4 people) through a 24-hour build. Added a Next-Best-Evidence engine, a Compromised Member ID Radar with a member confirmation loop, and a Phoenix Provider Detector.",
       outcome: "Top 5 finalist among 300+ teams at the Acentra Health x HackForge.ai grand finale.",
-    },
-  },
-  {
-    slug: "anbaram",
-    title: "Anbaram",
-    year: "2026",
-    category: "Civic tech, mobile + web",
-    summary:
-      "A donation-drive tracking platform for the Chengalpattu District Administration, Tamil Nadu, covering the full trail from collection to distribution.",
-    stack: ["Flutter", "React", "Supabase", "PostgreSQL", "Cloudinary"],
-    // TODO(jeffrey): add the Play Store link once the app is live.
-    links: {},
-    flagship: true,
-    detail: {
-      approach:
-        "One role-based Flutter app for Collection Point and Distribution Center officers, plus a React dashboard for the Collector's office. I designed the Supabase schema for weight-based, category-wise logging (clothes, blankets, stationery, books), with role-based access, an admin-approval flow for officer onboarding and one-to-one nodal officer mapping per collection point. Cloudinary backs every entry with a photo, and the dashboard tracks collections, flags issues and generates reports.",
-      outcome:
-        "Presented to the District Collector of Chengalpattu. The Flutter app is being prepared for release on the Google Play Store.",
     },
   },
   {

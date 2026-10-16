@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { archive, projects, type Project } from "@/data/projects";
 import { Band } from "./ui/Band";
 import { Container } from "./ui/Container";
@@ -69,11 +70,23 @@ function Flagship({ project, index }: { project: Project; index: number }) {
       </p>
       <div className="col-span-12 space-y-5 md:col-span-9">
         <Meta project={project} />
-        <h3 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.98] font-extrabold tracking-[-0.035em]">
-          <span className="underline decoration-transparent decoration-[3px] underline-offset-[0.14em] transition-colors duration-300 group-hover:decoration-accent">
-            {project.title}
-          </span>
-        </h3>
+        <div className="flex items-center gap-4 md:gap-5">
+          <h3 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.98] font-extrabold tracking-[-0.035em]">
+            <span className="underline decoration-transparent decoration-[3px] underline-offset-[0.14em] transition-colors duration-300 group-hover:decoration-accent">
+              {project.title}
+            </span>
+          </h3>
+          {project.logo && (
+            <Image
+              src={project.logo.src}
+              width={project.logo.width}
+              height={project.logo.height}
+              alt={project.logo.alt}
+              sizes="64px"
+              className="h-11 w-auto shrink-0 md:h-14"
+            />
+          )}
+        </div>
         <p className="max-w-[58ch] text-[18px] leading-[1.55] text-fg">{project.summary}</p>
         {project.award && (
           <p className="font-mono text-[12px] text-label">

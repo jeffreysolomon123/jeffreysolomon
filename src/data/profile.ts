@@ -47,7 +47,7 @@ export const profile: Profile = {
   socials: [
     { label: "GitHub", href: "https://github.com/jeffreysolomon123", handle: "jeffreysolomon123" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jeffreysolomon123", handle: "jeffreysolomon123" },
-    { label: "X", href: "https://x.com/jeffreysolomon_", handle: "@jeffreysolomon_" },
+    { label: "X", href: "https://x.com/jeffreysolomonm", handle: "@jeffreysolomonm" },
   ],
 };
 
