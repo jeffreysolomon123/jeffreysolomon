@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Project } from "@/data/projects";
 import { Arrow } from "./ui/Icons";
@@ -8,7 +8,7 @@ import { Arrow } from "./ui/Icons";
 /** "Case study" toggle that expands problem / approach / stack / outcome. */
 export function ProjectDetail({ project }: { project: Project }) {
   const [open, setOpen] = useState(false);
-  const id = useId();
+  const id = `case-study-${project.slug}`;
   const detail = project.detail;
   if (!detail) return null;
 
@@ -43,7 +43,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           >
             <dl className="mt-6 grid border-t border-line sm:grid-cols-2">
               {rows.map((r) => (
-                <div key={r.label} className="border-b border-line py-5 sm:odd:border-r sm:odd:pr-6 sm:even:pl-6">
+                <div key={r.label} className="border-b border-line py-5 sm:odd:border-r sm:odd:pr-6 sm:even:pl-6 sm:last:odd:col-span-2 sm:last:odd:border-r-0">
                   <dt className="font-mono text-[11.5px] text-label">{r.label}</dt>
                   <dd className="mt-2 text-[15px] leading-[1.6] text-fg">{r.body}</dd>
                 </div>

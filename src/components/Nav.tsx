@@ -30,11 +30,11 @@ export function Nav() {
       <Container className="flex h-16 items-center justify-between gap-6">
         <a
           href="#top"
-          aria-label={`${profile.name}, back to top`}
+          aria-label={`${profile.logoLines.join(" ")}, back to top`}
           className="font-display text-[13px] leading-[0.95] font-extrabold tracking-[-0.02em] uppercase"
           onClick={() => setOpen(false)}
         >
-          <span className="block text-ink">{profile.logoLines[0]}</span>
+          <span className="block text-ink">{profile.logoLines[0]}</span>{" "}
           <span className="block text-accent-deep">{profile.logoLines[1]}</span>
         </a>
 

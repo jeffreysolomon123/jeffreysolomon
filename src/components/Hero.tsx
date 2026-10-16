@@ -16,7 +16,7 @@ export function Hero() {
 
           <h1
             id="hero-name"
-            className="font-display text-[clamp(3.5rem,17vw,8.75rem)] leading-[0.92] font-extrabold tracking-[-0.03em] text-accent lg:text-[clamp(4.5rem,8.6vw,8.75rem)]"
+            className="font-display text-[clamp(3.5rem,17vw,8.75rem)] leading-[0.92] font-extrabold tracking-[-0.03em] text-accent lg:text-[clamp(4.5rem,7.6vw,8.25rem)]"
           >
             <span className="block">{profile.heroLines[0]}</span>
             <span className="block">{profile.heroLines[1]}</span>
@@ -58,7 +58,7 @@ export function Hero() {
               height={profile.photo.height}
               alt={profile.photo.alt}
               priority
-              sizes="(min-width: 1024px) 560px, 92vw"
+              sizes="(min-width: 1024px) 520px, 86vw"
               className="relative z-10 h-auto w-[min(86%,520px)] select-none"
             />
           ) : (

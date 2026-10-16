@@ -22,52 +22,55 @@
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
-:root,
-.band-cream {
-  --band-bg: var(--color-cream);
-  --band-fg: var(--color-ink);
-  --band-muted: #6b665c;
-  --band-line: rgba(11, 11, 11, 0.15);
-  --band-label: var(--color-accent-deep);
-}
+/* Unlayered CSS would beat Tailwind utilities, so base styles live in a layer. */
+@layer base {
+  :root,
+  .band-cream {
+    --band-bg: var(--color-cream);
+    --band-fg: var(--color-ink);
+    --band-muted: #6b665c;
+    --band-line: rgba(11, 11, 11, 0.15);
+    --band-label: var(--color-accent-deep);
+  }
 
-.band-ink {
-  --band-bg: var(--color-ink);
-  --band-fg: var(--color-bone);
-  --band-muted: #9a958a;
-  --band-line: rgba(245, 241, 232, 0.18);
-  --band-label: var(--color-accent);
-}
+  .band-ink {
+    --band-bg: var(--color-ink);
+    --band-fg: var(--color-bone);
+    --band-muted: #9a958a;
+    --band-line: rgba(245, 241, 232, 0.18);
+    --band-label: var(--color-accent);
+  }
 
-.band-cream,
-.band-ink {
-  background-color: var(--band-bg);
-  color: var(--band-fg);
-}
+  .band-cream,
+  .band-ink {
+    background-color: var(--band-bg);
+    color: var(--band-fg);
+  }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
-  -webkit-text-size-adjust: 100%;
-}
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
 
-body {
-  background-color: var(--color-cream);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-::selection {
-  background-color: var(--color-accent);
-  color: var(--color-ink);
-}
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
 
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -42,20 +42,7 @@ export function Education() {
               {skills.map((g) => (
                 <div key={g.label} className="grid gap-2 border-t border-line py-5 sm:grid-cols-[9rem_minmax(0,1fr)]">
                   <dt className="pt-0.5 font-mono text-[12px] text-muted">{g.label}</dt>
-                  <dd className="text-[15.5px] leading-[1.7]">
-                    <ul className="flex flex-wrap gap-x-1">
-                      {g.items.map((item, i) => (
-                        <li key={item}>
-                          {item}
-                          {i < g.items.length - 1 && (
-                            <span aria-hidden="true" className="text-muted">
-                              ,
-                            </span>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </dd>
+                  <dd className="text-[15.5px] leading-[1.7]">{g.items.join(", ")}</dd>
                 </div>
               ))}
             </dl>

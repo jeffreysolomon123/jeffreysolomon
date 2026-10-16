@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { focusAreas, focusIntro } from "@/data/focus";
 import { projects } from "@/data/projects";
@@ -15,7 +15,6 @@ const projectTitle = (slug: string) => projects.find((p) => p.slug === slug)?.ti
 
 export function Focus() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const baseId = useId();
 
   return (
     <Band tone="ink" id="focus" aria-labelledby="focus-heading" className="py-20 md:py-28">
@@ -28,8 +27,8 @@ export function Focus() {
           <ul className="col-span-12 border-b border-line md:col-span-9 md:col-start-4">
             {focusAreas.map((area, i) => {
               const open = openIndex === i;
-              const panelId = `${baseId}-panel-${i}`;
-              const buttonId = `${baseId}-button-${i}`;
+              const panelId = `focus-panel-${i}`;
+              const buttonId = `focus-button-${i}`;
               const linked = area.projects
                 .map((slug) => ({ slug, title: projectTitle(slug) }))
                 .filter((p): p is { slug: string; title: string } => Boolean(p.title));
