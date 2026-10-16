@@ -7,9 +7,9 @@ import { techIcons } from "./ui/Icons";
 export function Hero() {
   return (
     <section id="top" aria-labelledby="hero-name" className="band-cream overflow-hidden">
-      <Container className="grid lg:min-h-[min(100svh,880px)] lg:grid-cols-12">
-        <div className="flex flex-col justify-center pt-28 pb-14 lg:col-span-6 lg:pt-32 lg:pr-10 lg:pb-20">
-          <p className="mb-7 flex items-center gap-2 font-mono text-[12px] text-muted">
+      <Container className="grid lg:min-h-[min(90svh,760px)] lg:grid-cols-12">
+        <div className="flex flex-col justify-center pt-28 pb-14 lg:col-span-6 lg:pt-24 lg:pr-10 lg:pb-12">
+          <p className="mb-7 flex items-center gap-2 font-mono lg:mb-5 text-[12px] text-muted">
             <span aria-hidden="true" className="inline-block size-1.5 bg-accent" />
             {profile.role}, {profile.location}
           </p>
@@ -36,7 +36,7 @@ export function Hero() {
             )}
           </div>
 
-          <ul aria-label="Technologies I use" className="mt-12 grid w-fit grid-cols-4 gap-x-8 gap-y-6 text-fg">
+          <ul aria-label="Technologies I use" className="mt-12 grid w-fit grid-cols-4 lg:mt-9 gap-x-8 gap-y-6 text-fg">
             {heroTech.map((name) => {
               const Icon = techIcons[name];
               return (
@@ -50,7 +50,7 @@ export function Hero() {
         </div>
 
         {/* Accent panel bleeds to the right edge of the viewport via the ::after. */}
-        <div className="relative -mx-4 flex min-h-[380px] items-end justify-center bg-accent pt-12 sm:-mx-6 lg:col-span-6 lg:mx-0 lg:pt-24 lg:after:absolute lg:after:inset-y-0 lg:after:left-full lg:after:w-[50vw] lg:after:bg-accent">
+        <div className="relative -mx-4 flex min-h-[380px] items-end justify-center bg-accent pt-12 sm:-mx-6 lg:col-span-6 lg:mx-0 lg:pt-0 lg:after:absolute lg:after:inset-y-0 lg:after:left-full lg:after:w-[50vw] lg:after:bg-accent">
           {profile.photo ? (
             <Image
               src={profile.photo.src}
@@ -58,8 +58,8 @@ export function Hero() {
               height={profile.photo.height}
               alt={profile.photo.alt}
               priority
-              sizes="(min-width: 1024px) 760px, 86vw"
-              className="relative z-10 h-auto w-[min(86%,520px)] select-none lg:h-[min(86svh,820px)] lg:w-auto lg:max-w-full lg:object-contain lg:object-bottom"
+              sizes="(min-width: 1024px) 60vw, 86vw"
+              className="relative z-10 h-auto w-[min(86%,520px)] select-none lg:pointer-events-none lg:absolute lg:bottom-0 lg:left-1/2 lg:h-[calc(100%-3rem)] lg:w-[130%] lg:max-w-none lg:-translate-x-1/2 lg:object-contain lg:object-bottom"
             />
           ) : (
             // TODO(jeffrey): add public/me.png and set profile.photo.
