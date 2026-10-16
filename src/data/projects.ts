@@ -130,28 +130,13 @@ export const projects: Project[] = [
   },
 ];
 
-/**
- * Older projects carried over from the previous site.
- * TODO(jeffrey): keep, edit or delete these — they weren't in the redesign brief.
- */
+/** Older projects, shown as a compact "Earlier" list. */
 export const archive: Pick<Project, "slug" | "title" | "category" | "links">[] = [
   {
     slug: "qumment",
     title: "Qumment",
     category: "Embeddable comment engine",
     links: { live: "https://qumment.vercel.app", github: "https://github.com/jeffreysolomon123/Qumment" },
-  },
-  {
-    slug: "crewmate",
-    title: "Crewmate",
-    category: "Find collaborators for projects",
-    links: { live: "https://crewmate-neon.vercel.app/", github: "https://github.com/jeffreysolomon123/crewmate" },
-  },
-  {
-    slug: "neighbourly",
-    title: "Neighbourly",
-    category: "Local community app",
-    links: { github: "https://github.com/jeffreysolomon123/Neighbourly" },
   },
   {
     slug: "elliptic",
