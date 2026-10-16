@@ -57,17 +57,16 @@ export const projects: Project[] = [
     year: "2026",
     category: "Civic tech, mobile + web",
     summary:
-      "Donation-drive management suite for the Chengalpattu District Administration's \"Wall of Kindness\", presented to the District Collector.",
+      "A donation-drive tracking platform for the Chengalpattu District Administration, Tamil Nadu, covering the full trail from collection to distribution.",
     stack: ["Flutter", "React", "Supabase", "PostgreSQL", "Cloudinary"],
-    // TODO(jeffrey): confirm Play Store status and add any live link.
+    // TODO(jeffrey): add the Play Store link once the app is live.
     links: {},
     flagship: true,
     detail: {
-      problem:
-        "The district needed a way to log donations at collection points and track them through to distribution centres.",
       approach:
-        "A Flutter app with separate roles for Collection Point and Distribution Center officers, plus a React dashboard for the Collector's office. Weight-based logging across Clothes, Blankets, Stationery and Books, admin approval for officer sign-up, and hybrid collection-cycle triggers. Supabase (PostgreSQL) backend with Cloudinary for images.",
-      outcome: "Presented to the District Collector. Being published to the Play Store.",
+        "One role-based Flutter app for Collection Point and Distribution Center officers, plus a React dashboard for the Collector's office. I designed the Supabase schema for weight-based, category-wise logging (clothes, blankets, stationery, books), with role-based access, an admin-approval flow for officer onboarding and one-to-one nodal officer mapping per collection point. Cloudinary backs every entry with a photo, and the dashboard tracks collections, flags issues and generates reports.",
+      outcome:
+        "Presented to the District Collector of Chengalpattu. The Flutter app is being prepared for release on the Google Play Store.",
     },
   },
   {
@@ -75,17 +74,16 @@ export const projects: Project[] = [
     title: "UpgradeGuard",
     year: "2026",
     category: "Agentic AI",
-    summary:
-      "Multi-agent risk assessor that decides whether upgrading an outdated npm dependency will break your codebase.",
-    stack: ["Python", "LangGraph", "Groq API"],
+    summary: "A multi-agent LangGraph workflow that decides whether upgrading an outdated npm dependency will break your codebase.",
+    stack: ["Python", "LangGraph", "Groq API", "AST analysis"],
     // TODO(jeffrey): add the UpgradeGuard repo link.
     links: {},
     flagship: true,
     detail: {
-      problem: "Dependency upgrades are risky, and changelogs alone don't tell you whether your code is affected.",
       approach:
-        "Agents parse each package's changelog, analyse how the codebase uses it via the AST, and match the two to score the risk of upgrading.",
-      outcome: "In progress. Next step is a UI that accepts a GitHub URL.",
+        "Agents split the work into changelog parsing, AST-based usage analysis and risk matching: they read changelogs for breaking-change signals and statically analyse how the codebase uses the affected APIs. Groq (gpt-oss-120b) handles the low-latency reasoning.",
+      outcome:
+        "A structured, explainable upgrade-risk verdict that replaces reading changelogs by hand.",
     },
   },
   {
@@ -93,10 +91,11 @@ export const projects: Project[] = [
     title: "SafarX",
     year: "2025",
     category: "Safety, mobile + ML",
-    summary: "Tourist safety app that flags unusual movement with Isolation Forest anomaly detection.",
-    stack: ["React Native", "Expo", "Supabase", "PostgreSQL", "Isolation Forest"],
+    summary:
+      "A tourist safety app with geofencing, SOS alerts and anomaly detection (Isolation Forest spatial outlier scoring, plus prolonged-inactivity and drop-off models), and an authority dashboard to monitor alerts, manage geofences and coordinate emergency response.",
+    stack: ["React Native", "Expo", "React", "Supabase", "Anomaly detection"],
     links: { github: "https://github.com/jeffreysolomon123/safarX" },
-    award: "3rd place, Hackinfinity 2025",
+    award: "3rd place, Hackinfinity 2025, SSN College of Engineering",
   },
   {
     slug: "rag-qa",
@@ -121,8 +120,9 @@ export const projects: Project[] = [
     title: "Socket-Talk",
     // TODO(jeffrey): add year for Socket-Talk.
     category: "Real-time web",
-    summary: "Real-time chat with JWT auth, live rooms and persistent history.",
-    stack: ["MongoDB", "Express", "React", "Node.js", "Socket.IO"],
+    summary:
+      "Full-stack real-time chat with live messaging, persistent history and online presence over Socket.IO. JWT auth in HTTP-only cookies, Cloudinary profile pictures and a responsive UI, with client and server deployed separately.",
+    stack: ["React", "Express", "Socket.IO", "MongoDB", "Tailwind", "Cloudinary"],
     links: {
       github: "https://github.com/jeffreysolomon123/Socket-Talk-Client",
       live: "https://socket-talk-client.vercel.app",

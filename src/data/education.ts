@@ -6,6 +6,7 @@ export type EducationEntry = {
   year: string;
   /** e.g. "CGPA 9.16" or "88.8%" */
   score: string;
+  coursework?: string[];
 };
 
 export const education: EducationEntry[] = [
@@ -13,8 +14,15 @@ export const education: EducationEntry[] = [
     qualification: "B.Tech, Computer Science and Engineering",
     institution: "SRM Institute of Science and Technology",
     location: "Chennai",
-    year: "2028 (expected)",
+    year: "Graduating Jan 2028",
     score: "CGPA 9.16",
+    coursework: [
+      "Data Structures",
+      "Operating Systems",
+      "Computer Networks",
+      "Database Management",
+      "Algorithm Design",
+    ],
   },
   {
     qualification: "Class 12",

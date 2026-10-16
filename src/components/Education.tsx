@@ -1,5 +1,5 @@
 import { education } from "@/data/education";
-import { skills } from "@/data/skills";
+import { skills, spokenLanguages } from "@/data/skills";
 import { Container } from "./ui/Container";
 import { Label } from "./ui/Label";
 import { Reveal } from "./ui/Reveal";
@@ -25,6 +25,11 @@ export function Education() {
                     <p className="mt-2 font-mono text-[12px] text-muted">
                       {[e.board, e.year].filter(Boolean).join(" / ")}
                     </p>
+                    {e.coursework && e.coursework.length > 0 && (
+                      <p className="mt-3 max-w-[46ch] text-[14px] leading-[1.6] text-muted">
+                        <span className="text-fg">Coursework:</span> {e.coursework.join(", ")}
+                      </p>
+                    )}
                   </div>
                   <p className="shrink-0 font-display text-[22px] leading-none font-bold tracking-[-0.02em] whitespace-nowrap">
                     {e.score}
@@ -46,6 +51,9 @@ export function Education() {
                 </div>
               ))}
             </dl>
+            {spokenLanguages && (
+              <p className="mt-5 font-mono text-[12px] text-muted">Spoken: {spokenLanguages}</p>
+            )}
           </Reveal>
         </div>
       </Container>

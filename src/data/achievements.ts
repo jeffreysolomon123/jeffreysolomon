@@ -22,7 +22,7 @@ export const achievements: Achievement[] = [
     organizer: "Acentra Health x HackForge.ai",
     year: "2026",
     result: "TOP 5",
-    resultDetail: "Top 5 of 300+ teams. #1 of 50+ in the preliminary codathon.",
+    resultDetail: "Finalist, top 5 of 300+ teams. #1 of 50+ in the preliminary codathon.",
     built:
       "Led Team Cipher. Prelims: a .NET background job processor with retries, dead-letter storage and a status dashboard. Final: ClaimShield Nexus, in 24 hours.",
     project: "claimshield-nexus",
