@@ -19,7 +19,7 @@ export function Hero() {
         <div className="mt-8 grid gap-12 md:mt-10 lg:mt-14 lg:grid-cols-12 lg:items-end lg:gap-x-6">
           <h1
             id="hero-name"
-            className="font-display text-[clamp(3.5rem,17vw,8.75rem)] leading-[0.88] font-extrabold tracking-[-0.04em] text-accent lg:col-span-8 lg:text-[clamp(6.5rem,12.5vw,11.5rem)]"
+            className="font-display text-[clamp(3.5rem,17vw,8.75rem)] leading-[0.88] font-extrabold tracking-[-0.04em] text-accent lg:col-span-8 lg:text-[clamp(6.5rem,12.5vw,10rem)]"
           >
             <span className="block">{profile.heroLines[0]}</span>
             <span className="block md:pl-[0.55em]">{profile.heroLines[1]}</span>
