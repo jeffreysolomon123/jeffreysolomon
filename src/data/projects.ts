@@ -6,7 +6,7 @@ export type Project = {
   category: string;
   summary: string;
   stack: string[];
-  links: { github?: string; live?: string };
+  links: { github?: string; live?: string; npm?: string };
   /** Small tag next to the year, e.g. "In development". Delete the field to hide it. */
   status?: "In development";
   /** Short recognition line, e.g. a hackathon result. */
@@ -73,23 +73,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "upgradeguard",
-    title: "UpgradeGuard",
-    year: "2026",
-    category: "Agentic AI",
-    summary: "A multi-agent LangGraph workflow that decides whether upgrading an outdated npm dependency will break your codebase.",
-    stack: ["Python", "LangGraph", "Groq API", "AST analysis"],
-    // TODO(jeffrey): add the UpgradeGuard repo link.
-    links: {},
-    flagship: true,
-    detail: {
-      approach:
-        "Agents split the work into changelog parsing, AST-based usage analysis and risk matching: they read changelogs for breaking-change signals and statically analyse how the codebase uses the affected APIs. Groq (gpt-oss-120b) handles the low-latency reasoning.",
-      outcome:
-        "A structured, explainable upgrade-risk verdict that replaces reading changelogs by hand.",
-    },
-  },
-  {
     slug: "safarx",
     title: "SafarX",
     year: "2025",
@@ -101,21 +84,53 @@ export const projects: Project[] = [
     award: "3rd place, Hackinfinity 2025, SSN College of Engineering",
   },
   {
+    slug: "qumment",
+    title: "Qumment",
+    year: "2025",
+    category: "Embeddable comment engine",
+    summary:
+      "A plug-and-play comment widget, published on npm, with nested replies, likes and a dashboard for site owners. Built-in AI profanity filtering keeps threads clean, Redis-backed rate limiting stops spam bursts, and it's privacy-centred with no ads.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Redis", "Tailwind", "npm package"],
+    links: {
+      live: "https://qumment.vercel.app",
+      npm: "https://www.npmjs.com/package/qumment",
+      github: "https://github.com/jeffreysolomon123/Qumment",
+    },
+  },
+  {
+    slug: "upgradeguard",
+    title: "UpgradeGuard",
+    year: "2026",
+    category: "Agentic AI",
+    summary:
+      "A multi-agent LangGraph workflow that decides whether upgrading an outdated npm dependency will break your codebase. Agents parse changelogs for breaking changes, map how your code uses the affected APIs through AST analysis and return an explainable risk verdict.",
+    stack: ["Python", "LangGraph", "Groq API", "AST analysis"],
+    links: { github: "https://github.com/jeffreysolomon123/UpgradeGuard" },
+    detail: {
+      approach:
+        "Agents split the work into changelog parsing, AST-based usage analysis and risk matching: they read changelogs for breaking-change signals and statically analyse how the codebase uses the affected APIs. Groq (gpt-oss-120b) handles the low-latency reasoning.",
+      outcome:
+        "A structured, explainable upgrade-risk verdict that replaces reading changelogs by hand.",
+    },
+  },
+  {
     slug: "rag-qa",
     title: "RAG Q&A app",
-    // TODO(jeffrey): add year for the RAG Q&A app.
-    category: "AI",
-    summary: "Answers questions from your own documents using a Chroma vector store, HuggingFace embeddings and OpenRouter LLMs.",
+    year: "2025",
+    category: "AI, retrieval",
+    summary:
+      "Answers questions from your own documents. Sources are chunked, embedded with all-MiniLM-L6-v2 and stored in Chroma. Each query retrieves the top matches, refuses when relevance is too low, and has an OpenRouter LLM answer from that context with its sources.",
     stack: ["Python", "LangChain", "Chroma", "HuggingFace", "OpenRouter"],
     links: { github: "https://github.com/jeffreysolomon123/RAG" },
   },
   {
     slug: "mnist-digit-finder",
     title: "MNIST Digit Finder",
-    // TODO(jeffrey): add year and the full stack for MNIST Digit Finder.
+    year: "2026",
     category: "Machine learning, full-stack",
-    summary: "Draw a digit on a browser canvas and a CNN trained on MNIST predicts it.",
-    stack: ["Python", "CNN"],
+    summary:
+      "Draw a digit on a browser canvas and a CNN predicts it in real time. The Keras model reaches about 99% validation accuracy on MNIST, and a FastAPI backend crops and resizes each drawing to 28×28 before returning the digit with a confidence score.",
+    stack: ["Python", "TensorFlow", "Keras", "FastAPI", "NumPy", "Pillow"],
     links: { github: "https://github.com/jeffreysolomon123/MNIST-Digit-Finder-using-CNN" },
   },
   {
@@ -133,18 +148,16 @@ export const projects: Project[] = [
   },
 ];
 
-/** Older projects, shown as a compact "Earlier" list. */
-export const archive: Pick<Project, "slug" | "title" | "category" | "links">[] = [
-  {
-    slug: "qumment",
-    title: "Qumment",
-    category: "Embeddable comment engine",
-    links: { live: "https://qumment.vercel.app", github: "https://github.com/jeffreysolomon123/Qumment" },
-  },
+/** Older projects, shown at the end of the carousel tagged "Earlier". */
+export const archive: (Pick<Project, "slug" | "title" | "category" | "links"> &
+  Partial<Pick<Project, "summary" | "stack">>)[] = [
   {
     slug: "elliptic",
     title: "Elliptic illicit transaction detection",
     category: "ML classifier",
+    summary:
+      "Flags illicit Bitcoin transactions in the 203k-transaction Elliptic dataset. After cleaning, dropping unlabelled rows and keeping outliers as fraud signal, a grid-searched KNN classifier reaches 94% accuracy with 98% recall on illicit transactions.",
+    stack: ["Python", "scikit-learn", "pandas", "Seaborn"],
     links: { github: "https://github.com/jeffreysolomon123/elliptic-illicit-detection" },
   },
 ];

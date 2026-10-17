@@ -73,6 +73,14 @@
   }
 }
 
+/* Hide the scrollbar on horizontal tracks that have their own controls. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
