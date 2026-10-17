@@ -18,7 +18,6 @@ export type Profile = {
   email: string;
   siteUrl: string;
   resume: string | null;
-  photo: { src: string; width: number; height: number; alt: string } | null;
   socials: SocialLink[];
 };
 
@@ -38,12 +37,6 @@ export const profile: Profile = {
   siteUrl: "https://jeffreysolomon.vercel.app",
   // TODO(jeffrey): confirm public/Jeffrey-Solomon-Resume.pdf is your current résumé (set to null to hide the link).
   resume: "/Jeffrey-Solomon-Resume.pdf",
-  photo: {
-    src: "/me.png",
-    width: 1209,
-    height: 1301,
-    alt: "Portrait of Jeffrey Solomon",
-  },
   socials: [
     { label: "GitHub", href: "https://github.com/jeffreysolomon123", handle: "jeffreysolomon123" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jeffreysolomon123", handle: "jeffreysolomon123" },
